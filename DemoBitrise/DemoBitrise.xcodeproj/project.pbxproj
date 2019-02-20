@@ -13,6 +13,7 @@
 		8B516117221D385E0043320F /* DemoBitrise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B516115221D385E0043320F /* DemoBitrise.xcdatamodeld */; };
 		8B516119221D385F0043320F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B516118221D385F0043320F /* Assets.xcassets */; };
 		8B51611C221D385F0043320F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B51611A221D385F0043320F /* LaunchScreen.storyboard */; };
+		FB008EA46B7966A8F074D426 /* Pods_DemoBitrise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20B4545099131ACEB5F2233 /* Pods_DemoBitrise.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		8B516118221D385F0043320F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B51611B221D385F0043320F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B51611D221D385F0043320F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C019ABD2A2CEC167601F429B /* Pods-DemoBitrise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoBitrise.release.xcconfig"; path = "Target Support Files/Pods-DemoBitrise/Pods-DemoBitrise.release.xcconfig"; sourceTree = "<group>"; };
+		E82EDDC57BB9B13B826CDF3F /* Pods-DemoBitrise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoBitrise.debug.xcconfig"; path = "Target Support Files/Pods-DemoBitrise/Pods-DemoBitrise.debug.xcconfig"; sourceTree = "<group>"; };
+		F20B4545099131ACEB5F2233 /* Pods_DemoBitrise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoBitrise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB008EA46B7966A8F074D426 /* Pods_DemoBitrise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				8B51610D221D385E0043320F /* DemoBitrise */,
 				8B51610C221D385E0043320F /* Products */,
+				ADE13553740293AD1ED3FCA5 /* Pods */,
+				904B7312117DBE5DBEA52579 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = DemoBitrise;
 			sourceTree = "<group>";
 		};
+		904B7312117DBE5DBEA52579 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F20B4545099131ACEB5F2233 /* Pods_DemoBitrise.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ADE13553740293AD1ED3FCA5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E82EDDC57BB9B13B826CDF3F /* Pods-DemoBitrise.debug.xcconfig */,
+				C019ABD2A2CEC167601F429B /* Pods-DemoBitrise.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B516120221D385F0043320F /* Build configuration list for PBXNativeTarget "DemoBitrise" */;
 			buildPhases = (
+				A1C531B55FB8D00F3F82B470 /* [CP] Check Pods Manifest.lock */,
 				8B516107221D385E0043320F /* Sources */,
 				8B516108221D385E0043320F /* Frameworks */,
 				8B516109221D385E0043320F /* Resources */,
+				CADF2D9E0B92F277A3BB393A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A1C531B55FB8D00F3F82B470 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoBitrise-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CADF2D9E0B92F277A3BB393A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoBitrise/Pods-DemoBitrise-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoBitrise/Pods-DemoBitrise-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8B516107221D385E0043320F /* Sources */ = {
@@ -284,9 +357,11 @@
 		};
 		8B516121221D385F0043320F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E82EDDC57BB9B13B826CDF3F /* Pods-DemoBitrise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z7YWS97UKQ;
 				INFOPLIST_FILE = DemoBitrise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,9 +376,11 @@
 		};
 		8B516122221D385F0043320F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C019ABD2A2CEC167601F429B /* Pods-DemoBitrise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z7YWS97UKQ;
 				INFOPLIST_FILE = DemoBitrise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
